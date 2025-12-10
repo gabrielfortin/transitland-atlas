@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-brt-societdetransportdemontreal",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/gabrielfortin/gtfs/raw/refs/heads/main/stm_brt/gtfs_stm_439.zip"
+      },
+      "license": {
+        "url": "https://raw.githubusercontent.com/gabrielfortin/gtfs/refs/heads/main/stm_brt/license.txt",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-brt-societdetransportdemontreal",
+          "name": "Société de transport de Montréal",
+          "short_name": "STM",
+          "website": "http://www.stm.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STM"
+            },
+            {
+              "feed_onestop_id": "f-brt-societdetransportdemontreal~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-brt-societdetransportdemontreal~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/vehiclePositions",
+        "realtime_trip_updates": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/tripUpdates"
+      }
+    }
+  ]
+}
